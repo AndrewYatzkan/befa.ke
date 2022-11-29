@@ -1,0 +1,126 @@
+.App-br-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 4.5vh;
+
+    overflow: hidden;
+}
+
+.App-br-post:nth-child(1) {
+    margin-top: 2.5vh;
+}
+
+.App-br-post-header {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.App-user-info {
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2vw;
+} 
+
+.App-dots {
+    width: 5.5vmin;
+    height: 5.5vmin;
+    opacity: 0.95;
+    margin-left: auto;
+    margin-top: -0.4vh;
+}
+
+.App-br-post-content {
+    overflow: hidden;
+    height: calc(4/3 * 100%);
+    margin-top: 1vh;
+    border-radius: 15px;
+}
+
+.App-post-main-img {
+    width: 100%;
+}
+
+.App-post-blurred {
+    filter: blur(10px);
+}
+
+.App-invisible-img {
+    width: 8.5vmin;
+    height: 8.5vmin;
+}
+
+.App-post-warning {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.App-realmoji-info {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.App-post-late-br {
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none; 
+    outline: none !important;
+    background-color: white;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: 500;  /* TODO : Fix font weight */
+    font-size: 12px;
+    margin-top: 2vh;
+}
+
+.App-post-secondary-img {
+    width: 30%;
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.App-view-realmojis {
+    width: 25px;
+    height: 25px;
+    box-shadow: 0px 0px 5px 0.5px rgba(0,0,0,0.7);
+    border-radius: 50px;
+    margin-right: 5vmin;
+    margin-bottom: -5vmin;
+}
+
+.App-secondary-img-unlocked {
+    border: 2px solid black;
+    margin: 7.5px;
+}
+
+.App-caption-holder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-top: 1vmin;
+    margin-left: 4vmin;
+    height: 10vmin;
+    /*margin-bottom: -3.5vmin;*/
+}
