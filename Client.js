@@ -420,19 +420,23 @@ class Client {
 	}
 
 	async get_user_profile({uid, userName}, access_token) {
-		let body = {data:{}};
-		if (uid) body.data.uid = uid;
-		if (userName) body.data.userName = userName;
-		let req = await fetch(`https://us-central1-alexisbarreyat-bereal.cloudfunctions.net/getUserProfile`, {
-			body: JSON.stringify(body),
-			headers: {
-		    'Authorization': `Bearer ${access_token || this.user.access_token}`,
-		    "Content-Type": "application/json",
-		  },
-		  method: "POST"
-		});
-		let res = await req.json();
-		return res;
+		try {
+			let body = {data:{}};
+			if (uid) body.data.uid = uid;
+			if (userName) body.data.userName = userName;
+			let req = await fetch(`https://us-central1-alexisbarreyat-bereal.cloudfunctions.net/getUserProfile`, {
+				body: JSON.stringify(body),
+				headers: {
+			    'Authorization': `Bearer ${access_token || this.user.access_token}`,
+			    "Content-Type": "application/json",
+			  },
+			  method: "POST"
+			});
+			let res = await req.json();
+			return res;
+		} catch(e) {
+			return {};
+		}
 	}
 
 	async get_user_names(uids) {
@@ -444,12 +448,17 @@ class Client {
 		  },
 		  method: "POST"
 		});
+		console.log(await req.text())
 		let res = await req.json();
 		return res;
 	}
 
 	async get_own_username() {
-		return (await this.get_user_names([this.user.user_id]))?.result[0]?.userName;
+		try {
+			return (await this.get_user_names([this.user.user_id]))?.result[0]?.userName;
+		} catch (e) {
+			return '';
+		}
 	}
 }
 
