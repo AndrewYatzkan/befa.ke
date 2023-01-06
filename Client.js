@@ -454,7 +454,8 @@ class Client {
 
 	async get_own_username() {
 		try {
-			return (await this.get_user_names([this.user.user_id]))?.result[0]?.userName;
+			let username = (await this.get_user_names([this.user.user_id]))?.result[0]?.userName;
+			return username;
 		} catch (e) {
 			return '';
 		}
