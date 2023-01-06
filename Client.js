@@ -448,7 +448,6 @@ class Client {
 		  },
 		  method: "POST"
 		});
-		console.log(await req.text())
 		let res = await req.json();
 		return res;
 	}
